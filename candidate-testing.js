@@ -52,10 +52,17 @@ function gradeQuiz(candidateAnswers) {
 
   }
   
+    let totalCorrectAnswers = 0;
   
-
+    for (let i = 0; i < candidateAnswers.length; i++) {
+      if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+        totalCorrectAnswers++; 
+      }
+    }
   
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
+    let grade = (totalCorrectAnswers / questions.length) * 100;
+    
+  //TODO 3.2 use this variable to calculate the candidates score.
 
 
   return grade;
